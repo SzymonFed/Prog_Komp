@@ -49,10 +49,10 @@ namespace Zad_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!wtyczkiToolStripMenuItem.DropDownItems.ContainsKey("Nazwa"))
+            /*if (!wtyczkiToolStripMenuItem.DropDownItems.ContainsKey("Nazwa"))
             {
                 wtyczkiToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem(textBox1.Text, null, MenuHandler, textBox1.Text));
-            }
+            }*/
 
         }
         private void MenuHandler(object sender, EventArgs e)
@@ -63,10 +63,28 @@ namespace Zad_1
             string NazwaAssembly = names[0];
             string NazwaKlasy = names[1];
             string NazwaMetody = names[2];
-            MessageBox.Show("Wciśnięto menu.\nKlucz: " + item.Name + " Napis: " + item.Text);
-            Assembly plugin = Assembly.Load(NazwaAssembly);
-            Type item2 = plugin.GetType(NazwaKlasy);            MethodInfo method = item2.GetMethod(NazwaMetody);
-            object result = method.Invoke(null, new object[] { richTextBox1.Text });
+            char[] charsToTrim = { '.', 'd', 'l', 'l' };
+            //MessageBox.Show("Wciśnięto menu.\nKlucz: " + item.Name + " Napis: " + item.Text);
+            Assembly plugin = Assembly.LoadFrom(NazwaAssembly);
+            Type item2 = plugin.GetType(NazwaKlasy);
+            MethodInfo method = item2.GetMethod(NazwaMetody);
+            
+            if (method.Name.StartsWith("s_"))
+            {
+                object result = method.Invoke(null, new object[] { richTextBox1.Text });
+                richTextBox1.Text = result.ToString();
+            }
+            if (method.Name.StartsWith("r_"))
+            {
+                method.Invoke(null, new object[] { richTextBox1 });
+            }
+            if (method.Name.StartsWith("e_"))
+            {
+                object result = method.Invoke(null, new object[] { richTextBox1.SelectedText });
+                richTextBox1.SelectedText = result.ToString();
+            }
+            
+            
         }
 
         void LoadPlugins()
@@ -76,13 +94,14 @@ namespace Zad_1
                 Assembly plugin = Assembly.LoadFrom(myFilename);
                 foreach (Type item in plugin.GetTypes()) //lista klas
                 {
-                   
                     foreach (MethodInfo method in item.GetMethods())
                     {
-                        if (method.Name.EndsWith("xs") || method.Name.EndsWith("xr") || method.Name.EndsWith("xe"))
+                        if (method.Name == "getPluginName")
                         {
-                            wtyczkiToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem(method.Name, null, MenuHandler, myFilename + "|" + item.Name + "|" + method.Name));
-                            object result = method.Invoke(null, new object[] { richTextBox1.Text});
+                            object result = method.Invoke(null, new object[] {});
+                            string resultName = result.ToString().Substring(2);
+                            
+                            wtyczkiToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem(resultName, null, MenuHandler, myFilename + "|" + item.FullName + "|" + result.ToString()));
                         }
                     }
                 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace ClassLibrary1
 {
@@ -10,11 +12,17 @@ namespace ClassLibrary1
     {
         public static string getPluginName()
         {
-            return "JakisPlugin1";
+            return "r_Pogrubienie";
         }
-        public static string JakisPlugin1xs(string value)
+        public static void r_Pogrubienie(RichTextBox richBox)
         {
-            return "wartość podana do precyzyjnej funkcji to: " + value;
+            System.Drawing.Font newFont, oldFont;
+            oldFont = richBox.SelectionFont;
+            if (oldFont.Bold)
+                newFont = new Font(oldFont, FontStyle.Regular);
+            else
+                newFont = new Font(oldFont, FontStyle.Bold);
+            richBox.Font = newFont;
         }
     }
 }

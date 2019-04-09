@@ -84,7 +84,7 @@ namespace Zad_2
         {
             var watch = new Stopwatch();
             watch.Start();
-            var serviceClient = new ServiceW
+            //var serviceClient = new ServiceW
             watch.Stop();
             txtWeatherWatch.Text = watch.ElapsedMilliseconds.ToString();
         }
@@ -126,29 +126,29 @@ namespace Zad_2
 
         }
 
-        //private void btnAsynchronous_Click(object sender, EventArgs e)
-        //{
-        //    var watch = new Stopwatch();
-        //    watch.Start();
-        //    StartTasks();
-        //    FinishTasks();
-        //    watch.Stop();
-        //    txtAsynchronousWatch.Text = watch.ElapsedMilliseconds.ToString();
-        //}
+        private void btnAsynchronous_Click(object sender, EventArgs e)
+        {
+            //var watch = new Stopwatch();
+            //watch.Start();
+            //StartTasks();
+            //FinishTasks();
+            //watch.Stop();
+            //txtAsynchronousWatch.Text = watch.ElapsedMilliseconds.ToString();
+        }
 
-        //private void StartTasks()
-        //{
-        //    ServiceReferenceQuotes.DelayedStockQuoteSoapClient clientQuote = new ServiceReferenceQuotes.DelayedStockQuoteSoapClient("DelayedStockQuoteSoap");//1
-        //    taskQuote = clientQuote.GetQuickQuoteAsync(textBox2.Text, "0");//2
+        private void StartTasks()
+        {
+            //ServiceReferenceQuotes.DelayedStockQuoteSoapClient clientQuote = new ServiceReferenceQuotes.DelayedStockQuoteSoapClient("DelayedStockQuoteSoap");//1
+            //taskQuote = clientQuote.GetQuickQuoteAsync(textBox2.Text, "0");//2
 
-        //    ServiceSomething.SomethingSoapClient clientSomething = new ServiceSomething.SomethingSoapClient("SomethingSoap");//1
-        //    taskSomething = client.ConvertSomethingAsync(Convert.ToDouble(textBox3.Text));//2
-        //}
-        //private void FinishTasks()
-        //{
-        //    labelQuote.Text = taskQuote.Result.ToString();
-        //    labelSomething.Text = taskSomething.Result.ToString();
-        //}
+            //ServiceSomething.SomethingSoapClient clientSomething = new ServiceSomething.SomethingSoapClient("SomethingSoap");//1
+            //taskSomething = client.ConvertSomethingAsync(Convert.ToDouble(textBox3.Text));//2
+        }
+        private void FinishTasks()
+        {
+            //labelQuote.Text = taskQuote.Result.ToString();
+            //labelSomething.Text = taskSomething.Result.ToString();
+        }
 
     }
 }

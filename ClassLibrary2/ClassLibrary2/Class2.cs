@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace ClassLibrary2
 {
@@ -10,11 +12,19 @@ namespace ClassLibrary2
     {
         public static string getPluginName()
         {
-            return "JakisPlugin2s";
+            return "r_Kursywa";
         }
-        public static string JakisPlugin2xs(string value)
+        
+        public static void r_Kursywa(RichTextBox richBox)
         {
-            return "wartość podana do precyzyjnej funkcji to: " + value;
+                System.Drawing.Font newFont, oldFont;
+                oldFont = richBox.SelectionFont;
+                if (oldFont.Italic)
+                    newFont = new Font(oldFont, FontStyle.Regular);
+                else
+                    newFont = new Font(oldFont, FontStyle.Italic);
+                richBox.Font = newFont;
         }
+        
     }
 }
