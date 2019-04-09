@@ -116,7 +116,7 @@ namespace Zad_2
                 MessageBox.Show("Nie wypełnione pole ze wskazaniem akcji do pobrania pełnej informacji(PublicOrder)", "Brak danych", MessageBoxButtons.OK);
                 return;
             }
-
+            //hue
             btnQuotes_Click(sender, e);
             btnResolve_Click(sender, e);
             btnEcho_Click(sender, e);
