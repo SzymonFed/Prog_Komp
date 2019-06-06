@@ -63,7 +63,7 @@ namespace Zad_1
             string NazwaAssembly = names[0];
             string NazwaKlasy = names[1];
             string NazwaMetody = names[2];
-            char[] charsToTrim = { '.', 'd', 'l', 'l' };
+            
             //MessageBox.Show("Wciśnięto menu.\nKlucz: " + item.Name + " Napis: " + item.Text);
             Assembly plugin = Assembly.LoadFrom(NazwaAssembly);
             Type item2 = plugin.GetType(NazwaKlasy);
