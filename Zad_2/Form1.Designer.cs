@@ -93,6 +93,7 @@
             // 
             this.txtQuotesOutput.Location = new System.Drawing.Point(190, 19);
             this.txtQuotesOutput.Name = "txtQuotesOutput";
+            this.txtQuotesOutput.ReadOnly = true;
             this.txtQuotesOutput.Size = new System.Drawing.Size(100, 20);
             this.txtQuotesOutput.TabIndex = 1;
             // 
@@ -100,6 +101,7 @@
             // 
             this.txtResolveOutput.Location = new System.Drawing.Point(190, 13);
             this.txtResolveOutput.Name = "txtResolveOutput";
+            this.txtResolveOutput.ReadOnly = true;
             this.txtResolveOutput.Size = new System.Drawing.Size(100, 20);
             this.txtResolveOutput.TabIndex = 4;
             // 
@@ -136,11 +138,13 @@
             this.txtEchoInput.Name = "txtEchoInput";
             this.txtEchoInput.Size = new System.Drawing.Size(100, 20);
             this.txtEchoInput.TabIndex = 3;
+            this.txtEchoInput.Text = "text";
             // 
             // txtEchoOutput
             // 
             this.txtEchoOutput.Location = new System.Drawing.Point(190, 17);
             this.txtEchoOutput.Name = "txtEchoOutput";
+            this.txtEchoOutput.ReadOnly = true;
             this.txtEchoOutput.Size = new System.Drawing.Size(100, 20);
             this.txtEchoOutput.TabIndex = 4;
             // 
@@ -158,6 +162,7 @@
             // 
             this.txtTimeOutput.Location = new System.Drawing.Point(190, 16);
             this.txtTimeOutput.Name = "txtTimeOutput";
+            this.txtTimeOutput.ReadOnly = true;
             this.txtTimeOutput.Size = new System.Drawing.Size(100, 20);
             this.txtTimeOutput.TabIndex = 1;
             // 
@@ -194,11 +199,13 @@
             this.txtWeatherInput.Name = "txtWeatherInput";
             this.txtWeatherInput.Size = new System.Drawing.Size(100, 20);
             this.txtWeatherInput.TabIndex = 3;
+            this.txtWeatherInput.Text = "Szczecin";
             // 
             // txtPublicOutput
             // 
             this.txtPublicOutput.Location = new System.Drawing.Point(187, 19);
             this.txtPublicOutput.Name = "txtPublicOutput";
+            this.txtPublicOutput.ReadOnly = true;
             this.txtPublicOutput.Size = new System.Drawing.Size(209, 20);
             this.txtPublicOutput.TabIndex = 4;
             // 
@@ -206,6 +213,7 @@
             // 
             this.txtWeatherOutput.Location = new System.Drawing.Point(195, 21);
             this.txtWeatherOutput.Name = "txtWeatherOutput";
+            this.txtWeatherOutput.ReadOnly = true;
             this.txtWeatherOutput.Size = new System.Drawing.Size(100, 20);
             this.txtWeatherOutput.TabIndex = 4;
             // 
@@ -227,6 +235,7 @@
             // 
             this.txtQuotesWatch.Location = new System.Drawing.Point(296, 19);
             this.txtQuotesWatch.Name = "txtQuotesWatch";
+            this.txtQuotesWatch.ReadOnly = true;
             this.txtQuotesWatch.Size = new System.Drawing.Size(100, 20);
             this.txtQuotesWatch.TabIndex = 22;
             // 
@@ -234,6 +243,7 @@
             // 
             this.txtResolveWatch.Location = new System.Drawing.Point(296, 13);
             this.txtResolveWatch.Name = "txtResolveWatch";
+            this.txtResolveWatch.ReadOnly = true;
             this.txtResolveWatch.Size = new System.Drawing.Size(100, 20);
             this.txtResolveWatch.TabIndex = 22;
             // 
@@ -241,6 +251,7 @@
             // 
             this.txtEchoWatch.Location = new System.Drawing.Point(296, 17);
             this.txtEchoWatch.Name = "txtEchoWatch";
+            this.txtEchoWatch.ReadOnly = true;
             this.txtEchoWatch.Size = new System.Drawing.Size(100, 20);
             this.txtEchoWatch.TabIndex = 22;
             // 
@@ -248,6 +259,7 @@
             // 
             this.txtTimeWatch.Location = new System.Drawing.Point(296, 16);
             this.txtTimeWatch.Name = "txtTimeWatch";
+            this.txtTimeWatch.ReadOnly = true;
             this.txtTimeWatch.Size = new System.Drawing.Size(100, 20);
             this.txtTimeWatch.TabIndex = 22;
             // 
@@ -255,6 +267,7 @@
             // 
             this.txtPublicWatch.Location = new System.Drawing.Point(299, 74);
             this.txtPublicWatch.Name = "txtPublicWatch";
+            this.txtPublicWatch.ReadOnly = true;
             this.txtPublicWatch.Size = new System.Drawing.Size(100, 20);
             this.txtPublicWatch.TabIndex = 22;
             // 
@@ -262,6 +275,7 @@
             // 
             this.txtWeatherWatch.Location = new System.Drawing.Point(114, 65);
             this.txtWeatherWatch.Name = "txtWeatherWatch";
+            this.txtWeatherWatch.ReadOnly = true;
             this.txtWeatherWatch.Size = new System.Drawing.Size(100, 20);
             this.txtWeatherWatch.TabIndex = 22;
             // 

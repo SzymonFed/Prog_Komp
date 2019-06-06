@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Net;
+using System.Xml;
 
 namespace Zad_2
 {
@@ -80,11 +82,21 @@ namespace Zad_2
             txtPublicWatch.Text = watch.ElapsedMilliseconds.ToString();
         }
 
-        private void btnWeather_Click(object sender, EventArgs e)
+        private async void btnWeather_Click(object sender, EventArgs e)
         {
             var watch = new Stopwatch();
             watch.Start();
-            //var serviceClient = new ServiceW
+          
+                string weburl = "http://api.openweathermap.org/data/2.5/forecast?q=" + txtWeatherInput.Text + "&APPID=a641ce707f6cfac2f1de79917ca03124&mode=xml";
+
+                var xml = await new WebClient().DownloadStringTaskAsync(new Uri(weburl));
+
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                string szTemp = doc.DocumentElement.SelectSingleNode("forecast/time/temperature").Attributes["value"].Value;
+                double temp = double.Parse(szTemp, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo) - 273.16;
+                txtWeatherOutput.Text = temp.ToString("N2") + " Celcius";
+            
             watch.Stop();
             txtWeatherWatch.Text = watch.ElapsedMilliseconds.ToString();
         }
